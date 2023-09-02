@@ -77,14 +77,14 @@ class War {
     saxonAttack() {
         const randomVikingIndex = Math.floor(Math.random() * this.vikingArmy.length);
         const randomViking = this.vikingArmy[randomVikingIndex];
-        const randomSaxonIndex = Math.floor(Math.random() * this.saxonArmy.length);
-        const randomSaxon = this.saxonArmy[randomSaxonIndex];
+        const randomSaxon = this.saxonArmy[Math.floor(Math.random() * this.saxonArmy.length)];
 
         const damage = randomSaxon.strength;
         randomViking.receiveDamage(damage);
 
         if (randomViking.health <= 0) {
             this.vikingArmy.splice(randomVikingIndex, 1);
+            
         }
     }
     showStatus() {
